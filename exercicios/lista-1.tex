@@ -1,0 +1,213 @@
+\documentclass{article}
+\usepackage[a4paper, margin=3cm]{geometry}
+\usepackage[brazilian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, amsthm, listings}
+
+\title{Projeto e Análise de Algoritmos -- Lista de Exercícios 1}
+\author{Lucas Bordignon \and Matheus Bittencourt \and Vinicius Macelai}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+	%%%% exercicio 1 %%%%
+	\item \begin{enumerate}
+		%%%% item a %%%%
+		\item \begin{proof}
+		$$\sum_{i=1}^n i = \frac{n(n+1)}{2}$$
+
+		Passo base ($n=1$):
+		$$1 = \frac{1(1+1)}{2}$$
+
+		Passo indutivo:
+		\begin{align*}
+			\frac{n(n+1)}{2} + n+1 &= \frac{(n+1)(n+2)}{2} \\
+			\frac{n(n+1) + 2(n+1)}{2} &= \\
+			\frac{(n+1)(n+2)}{2} &= \frac{(n+1)(n+2)}{2}
+		\end{align*}
+		\end{proof}
+
+		%%%% item b %%%%
+		\item \begin{proof}
+		$$\sum_{i=0}^n i^2 = \frac{n(n+1)(2n+1)}{6}$$
+
+		Passo base ($n=0$):
+		$$0 = \frac{0(0+1)(2\cdot0+1)}{6}$$
+
+		Passo indutivo:
+		\begin{align*}
+			\frac{n(n+1)(2n+1)}{6}+(n+1)^2 &= \frac{(n+1)(n+2)(2(n+1)+1)}{6} \\
+			\frac{(n^2+n)(2n+1)+6(n^2+2n+1)}{6} &= \frac{(n^2+3n+2)(2n+3)}{6} \\
+			2n^3 + n^2 + 2n^2 + n + 6n^2 + 12n + 6 &=
+				2n^3 + 3n^2 + 6n^2 + 9n + 4n + 6 \\
+			2n^3 + 9n^2 + 13n + 6 &= 2n^3 + 9n^2 + 13n + 6
+		\end{align*}
+		\end{proof}
+
+		%%%% item c %%%%
+		\item \begin{proof}
+		$$\sum_{i=0}^n (2i - 1) = n^2$$
+
+		Passo base ($n=1$):
+		$$2-1=1^2$$
+
+		Passo indutivo:
+		\begin{align*}
+			n^2 + 2(n+1) - 1 &= (n+1)^2 \\
+			n^2 + 2n + 1 &= n^2 + 2n + 1
+		\end{align*}
+		\end{proof}
+
+		%%%% item d %%%%
+		\item \begin{proof}
+		$$\sum_{i=0}^n i^3 = \frac{n^2(n+1)^2}{4}$$
+
+		Passo base ($n=0$):
+		$$0^3=\frac{0^2(0+1)^2}{4}$$
+
+		Passo indutivo:
+		\begin{align*}
+			\frac{n^2(n+1)^2}{4} + (n+1)^3 &= \frac{(n+1)^2(n+2)^2}{4} \\
+			\frac{(n+1)^2(n^2 + 4(n+1))}{4} &= \\
+			n^2 + 4n + 4 &= (n+2)^2 \\
+			n^2 + 4n + 4 &= n^2 + 4n + 4
+		\end{align*}
+		\end{proof}
+	\end{enumerate}
+
+	%%%% exercicio 2 %%%%
+	\item Para $n \geq 44$.
+
+	%%%% exercicio 3 %%%%
+	\item Para $n = 15$.
+
+	%%%% exercicio 4 %%%%
+	\item \begin{tabular} {|c|c|c|c|c|c|c|c|}
+	\hline
+	& 1 seg & 1 min & 1 hora & 1 dia & 1 mês & 1 ano & 1 século \\ \hline
+	$\lg n$ & $2^{1\times10^6}$ & $2^{6\times10^7}$ & $2^{3.6\times10^9}$ &
+	$2^{8.64\times10^{10}}$ & $2^{2.592\times10^{12}}$ &
+	$2^{3.1536\times10^{13}}$ & $2^{3.1536\times10^{15}}$ \\ \hline
+
+	$\sqrt{n}$ & $1\times10^{12}$ & $3.6\times10^{15}$ & $1.296\times10^{19}$ &
+	$7.464\times10^{21}$ & $6.718\times10^{24}$ & $9.945\times10^{26}$ &
+	$9.945\times10^{30}$ \\ \hline
+
+	$n$ & $1\times10^6$ & $6\times10^7$ & $3.6\times10^9$ & $8.64\times10^{10}$
+	& $2.592\times10^{12}$ & $3.1536\times10^{13}$ & $3.1536\times10^{15}$ \\
+	\hline
+
+	$n \lg n$ & $62746$ & $2801417$ & $133378058$ & $2755147513$ &
+	$71870856404$ & $7.97\times10^{11}$ & $6.86\times10^{13}$ \\ \hline
+
+	$n^2$ & $1000$ & $7745$ & $60000$ & $293938$ & $1609968$ & $5615692$ &
+	$56156922$ \\ \hline
+
+	$n^3$ & $100$ & $391$ & $1532$ & $4420$ & $13736$ & $31593$ & $146645$ \\
+	\hline
+
+	$2^n$ & $19$ & $25$ & $31$ & $36$ & $41$ & $44$ & $51$ \\ \hline
+
+	$n!$ & $9$ & $11$ & $12$ & $13$ & $15$ & $16$ & $17$ \\ \hline
+
+	\end{tabular}
+
+	%%%% exercicio 5 %%%%
+	\item \begin{lstlisting}[frame=single, tabsize=4]
+BuscaMaior(V[1..n])
+	maior <- V[1]
+	for i <- 2 to n do
+		if V[i] > maior then
+			maior <- V[i]
+	return maior
+	\end{lstlisting}
+
+	\textbf{Invariante:} a variável \texttt{maior} sempre possui o maior valor
+	do subvetor \texttt{V[1..i]}.
+
+	\textbf{Inicialização:} no início do algoritmo, apenas o primeiro elemento
+	foi analisado, logo ele é o maior.
+
+	\textbf{Manutenção:} se o próximo elemento (\texttt{V[i]}) for maior que o
+	elemento armazenado na variável \texttt{maior}, então ele é maior que
+	qualquer elemento do subvetor \texttt{V[1..i-1]}, portanto, o maior
+	elemento do subvetor \texttt{V[1..i]}. Sendo assim, a variável
+	\texttt{maior} é atualizada, mantendo a invariante.
+
+	\textbf{Término:} ao final do algoritmo, teremos analisado todo o vetor
+	(\texttt{i=n}) e a variável \texttt{maior} terá o maior valor do vetor
+	original, que será retornado.
+
+	\textbf{Análise de complexidade:} no melhor caso o maior elemento será o
+	primeiro, logo, a linha 4 será executada apenas uma vez:
+	\begin{align*}
+	T(n) &= c_1 + c_2\cdot n + c_3\cdot (n-1) + c_4 + c5 \\
+	&= (c_2 + c_3)\cdot n + (c_1 - c_3 + c_4 + c_5)
+	\end{align*}
+
+	No pior caso o vetor estará em ordem crescente, e a linha 4 será executada
+	em todas as iterações do loop:
+	\begin{align*}
+	T(n) &= c_1 + c_2\cdot n + c_3\cdot (n-1) + c_4\cdot (n-1) + c5 \\
+	&= (c_2 + c_3 + c_4)\cdot n + (c_1 - c_3 - c_4 + c_5)
+	\end{align*}
+
+	%%%% exercicio 6 %%%%
+	\item \begin{lstlisting}[frame=single, tabsize=4]
+SelectionSort(V[1..n])
+	for i <- 1 to n - 1 do
+		menor <- i
+		for j <- i + 1 to n do
+			if V[j] < V[menor] then
+				menor <- j
+		subs <- V[i]
+		V[i] <- V[menor]
+		V[menor] <- subs
+	return V
+	\end{lstlisting}
+
+	\textbf{Invariante:} no final de cada loop, o subvetor \texttt{V[1..i]}
+	está ordenado, e todos os elementos do subvetor \texttt{V[i+1..n]} são
+	maiores que os do \texttt{V[1..i]}.
+
+	\textbf{Inicialização:} na primeira passada pelo vetor (\texttt{i=1}) o
+	menor elemento do vetor é encontrado e substituído com o primeiro.
+
+	\textbf{Manutenção:} a cada passada, sabemos que o subvetor
+	\texttt{V[1..i-1]} está ordenado, e todos os elementos subsequentes são
+	maiores que qualquer elemento deste subvetor, logo, escolhemos o menor
+	elemento do subvetor \texttt{V[i..n]} e o colocamos na posição \texttt{i},
+	mantendo a invariante, pois mantemos a ordenação do subvetor inicial, e os
+	elementos subsequentes a posição \texttt{i} continuam sendo maiores, pois
+	escolhemos o menor deles.
+
+	\textbf{Término:} no final todos \texttt{V[1..n-1]} estará ordenado e
+	\texttt{V[n]} será maior que qualquer elemento de \texttt{V[1..n-1]}, ou
+	seja, a lista está ordenada, por isso não precisamos executar o loop de
+	\texttt{1} até \texttt{n}.
+
+	\textbf{Análise de complexidade:} no melhor caso o vetor estará ordenado e
+	a linha 5 nunca é executada, logo:
+	\begin{align*}
+	T(n) &= c_1 \cdot n + c_2 \cdot (n-1) + c_3 \cdot \sum_{i=1}^{n}i + c_4
+	\cdot \sum_{i=1}^{n-1}i + c_6 \cdot (n-1) + c_7 \cdot (n-1) + c_8 \cdot
+	(n-1) + c_9 \\
+	&= (c_1 + c_2 + c_6 + c_7 + c_8) \cdot n + (c_9-c_2-c_6-c_7-c_8) + c_3
+	\cdot \frac{n(n+1)}{2} + c_4 \cdot \left ( \frac{n(n+1)}{2} - n \right ) \\
+	&= \left ( \frac{c_3}{2} + \frac{c_4}{2} \right ) \cdot n^2 + \left ( c_1 +
+	c_2 + \frac{c_3}{2} - \frac{c_4}{2} + c_6 + c_7 + c_8 \right ) \cdot n +
+	(c_9-c_2-c_6-c_7-c_8)
+	\end{align*}
+
+	No pior caso (assumindo que exista um caso que isso aconteça), a linha 5
+	será executada todas as vezes no loop interno. Para calcular $T(n)$ no pior
+	caso, basta adicionar a parcela:
+
+	$$ c_5 \cdot \sum_{i=1}^{n-1}i $$
+
+\end{enumerate}
+
+\end{document}

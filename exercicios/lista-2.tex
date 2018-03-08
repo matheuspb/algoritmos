@@ -1,0 +1,232 @@
+\documentclass{article}
+\usepackage[a4paper, margin=3cm]{geometry}
+\usepackage[brazilian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, amsthm, listings}
+
+\title{Projeto e Análise de Algoritmos -- Lista de Exercícios 2}
+\author{Lucas Bordignon \and Matheus Bittencourt \and Vinicius Macelai}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+	%%%% exercicio 1 %%%%
+	\item
+
+	%%%% exercicio 2 %%%%
+	\item \begin{enumerate}
+		%%%% a) %%%%
+		\item $f(n) \in O(g(n))$:
+		$$ 0 \le n-100 \le c(n-200) $$
+		A inequação se verifica para $n\ge300$ e $c=2$.
+
+		$f(n) \in \Omega(g(n))$:
+		\begin{align*}
+			0 &\le n-200 \le n-100 \\
+			0 &\le n \le n+100 \\
+		\end{align*}
+
+		Logo, $f(n) \in \Theta(g(n))$.
+
+		%%%% b) %%%%
+		\item $f(n) \in O(g(n))$:
+		\begin{align*}
+			0 &\le n^{1/2} \le cn^{2/3} \\
+			0 &\le n^{1/2-2/3} \le c \\
+			0 &\le n^{3/6-4/6} \le c \\
+			0 &\le n^{-1/6} \le c
+		\end{align*}
+		Basta escolher um $c$ que satisfaça a inequação acima com $n=n_0$
+
+		$f(n) \notin \Omega(g(n))$:
+		\begin{align*}
+			0 &\le cn^{2/3} \le n^{1/2} \\
+			0 &\le c \le n^{-1/6}
+		\end{align*}
+		A inequação não se verifica quando $n > c$. Logo, $f(n) \notin
+		\Theta(g(n))$.
+
+		%%%% c) %%%%
+		\item $f(n) \in O(g(n))$:
+		\begin{align*}
+			0 &\le 100n + \log n \le c (n + \log^2 n) \\
+			0 &\le \frac{100n + \log n}{n + \log^2 n} \le c
+		\end{align*}
+		Visto que $\lim_{x\to\infty}\frac{100n + \log n}{n + \log^2 n}=100$,
+		então basta que $c>100$ que a inequação será satisfeita para todo
+		$n>n_0$.
+
+		$f(n) \in \Omega(g(n))$:
+		\begin{align*}
+			0 &\le c (n + \log^2 n) \le 100n + \log n \\
+			0 &\le c \le \frac{100n + \log n}{n + \log^2 n}
+		\end{align*}
+		Agora basta escolher $c<100$. Logo, $f(n) \in \Theta(g(n))$.
+
+		%%%% d) %%%%
+		\item $f(n) \in O(g(n))$:
+		\begin{align*}
+			0 &\le n \log n \le 10n \log 10n \\
+			0 &\le \log n \le 10 (\log 10 + \log n)
+		\end{align*}
+
+		$f(n) \in \Omega(g(n))$:
+		\begin{align*}
+			0 &\le c10n \log 10n \le n \log n \\
+			0 &\le c10 \log 10n \le \log n \\
+			0 &\le c \le \frac{\log n}{10 \log 10n} \\
+			0 &\le c \le \frac{\log n}{10 (\log 10 + \log n)}
+		\end{align*}
+		A parte da direita sempre está crescendo (semelhante com o que acontece
+		na função $f(x)=\frac{x}{1+x}$), então basta escolher um $c$ pequeno o
+		suficiente que a inequação é satisfeita para $n>n_0$. Logo, $f(n) \in
+		\Theta(g(n))$.
+
+		%%%% e) %%%%
+		\item $f(n) \in O(g(n))$:
+		\begin{align*}
+			0 &\le \log 2n \le \log 3n \\
+			0 &\le \log 2 + \log n \le \log 3 + \log n \\
+			0 &\le \log 2 \le \log 3
+		\end{align*}
+
+		$f(n) \in \Omega(g(n))$:
+		\begin{align*}
+			0 &\le c \log 3n \le \log 2n \\
+			0 &\le c \le \frac{\log 2n}{\log 3n}
+		\end{align*}
+		Visto que, $\lim_{n\to\infty}\frac{\log 2n}{\log 3n}=1$, basta que
+		$c<1$ e haverá algum $n_0$ que satisfaça a equação. Logo $f(n) \in
+		\Theta(g(n))$.
+
+		%%%% f) %%%%
+		\item $f(n) \in O(g(n))$:
+		\begin{align*}
+			0 &\le 10 \log n \le c \log n^2 \\
+			0 &\le 10 \log n \le 2c \log n
+		\end{align*}
+		Basta que $c>5$.
+
+		$f(n) \in \Omega(g(n))$:
+		\begin{align*}
+			0 &\le c \log n^2 \le 10 \log n \\
+			0 &\le 2c \log n \le 10 \log n
+		\end{align*}
+		Basta que $c<5$. Logo $f(n) \in \Theta(g(n))$.
+
+		%%%% g) %%%%
+		\item $f(n) \notin O(g(n))$:
+		\begin{align*}
+			0 &\le \frac{n^2}{\log n} \le c n \log^2 n \\
+			0 &\le \frac{n}{\log^3 n} \le c
+		\end{align*}
+		A função  da esquerda é crescente para valores positivos, logo não é
+		possível encontrar uma constante $c$ que satisfaça a inequação.
+
+		$f(n) \in \Omega(g(n))$:
+		\begin{align*}
+			0 &\le c n \log^2 n \le \frac{n^2}{\log n} \\
+			0 &\le c \le \frac{n}{\log^3 n} \\
+		\end{align*}
+		Como a função da direita é crescente, podemos encontrar um $c$ que
+		satisfaça a inequação para todo $n > n_0$. Logo $f(n) \notin
+		\Theta(g(n))$.
+
+		%%%% h) %%%%
+		\item
+
+		%%%% i) %%%%
+		\item
+
+		%%%% j) %%%%
+		\item
+
+		%%%% k) %%%%
+		\item
+
+		%%%% l) %%%%
+		\item $f(n) \in O(g(n))$:
+		\begin{align*}
+			0 &\le n2^n \le c 3^n \\
+			0 &\le n\left(\frac{2}{3}\right)^n \le c
+		\end{align*}
+		Visto que $\lim_{n\to\infty}n\left(\frac{2}{3}\right)^n = 0$, então
+		basta escolher um $c > 0$ que existirá um $n_0$ que satisfaça a
+		inequação.
+
+		$f(n) \notin \Omega(g(n))$:
+		\begin{align*}
+			0 &\le c 3^n \le n 2^n \\
+			0 &\le c \le n \left(\frac{2}{3}\right)^n
+		\end{align*}
+		Como o lado direito está sempre diminuindo, devido ao limite
+		apresentado acima, não podemos escolher uma constante $c$ que satisfaça
+		a equação, já que sempre haverá um $n$ grande o suficiente que faça com
+		que o lado direito seja menor que o esquerdo. Logo, $f(n) \notin
+		\Theta(g(n))$
+
+		%%%% m) %%%%
+		\item $f(n) \in O(g(n))$:
+		\begin{align*}
+			0 &\le 2^n \le c 2^{n+1} \\
+			0 &\le \frac{2^n}{2^{n+1}} \le c \\
+			0 &\le \frac{1}{2} \le c
+		\end{align*}
+
+		$f(n) \in \Omega(g(n))$:
+		\begin{align*}
+			0 &\le c 2^{n+1} \le 2^n \\
+			0 &\le c \le \frac{1}{2}
+		\end{align*}
+
+		Logo, $f(n) \in \Theta(g(n))$.
+
+		%%%% n) %%%%
+		\item $f(n) \notin O(g(n))$:
+		\begin{align*}
+			0 \le n! &\le c \cdot 2^n \\
+			0 \le n \cdot (n-1) \cdot (n-2) \ldots 2 \cdot 1 &\le c \cdot 2
+			\cdot 2 \ldots 2 \cdot 2
+		\end{align*}
+		A inequação claramente não é satisfeita quando $n \ge c$.
+
+		$f(n) \in \Omega(g(n))$:
+		\begin{align*}
+			0 \le c \cdot 2 \cdot 2 \ldots 2 \cdot 2 \le n \cdot (n-1) \cdot
+			(n-2) \ldots 2 \cdot 1
+		\end{align*}
+		Basta que $c=1$ para que a inequação seja satisfeita. Logo, $f(n)
+		\notin \Theta(g(n))$.
+
+		%%%% o) %%%%
+		\item
+	\end{enumerate}
+
+	%%%% exercicio 3 %%%%
+	\item No exercício 5, tanto no melhor caso quanto no pior, $T(n)$ se trata
+	de um polinômio na forma $an + b$, então $T(n) \in \Theta(n)$. No exercício
+	6, $T(n)$ está na forma $an^2 + bn + c$ no melhor e no pior caso, logo,
+	$T(n) \in \Theta(n^2)$.
+
+	%%%% exercicio 4 %%%%
+	\item \begin{enumerate}
+		\item O limite inferior deve ser $n$ comparações, pois não temos como
+		determinar o $n$-ésimo termo sem ao menos $n$ comparações.
+
+		\item \begin{lstlisting}[tabsize=4]
+K-esimo(A[1..n], B[1..n], k):
+	for i <- 1 to k - 1 do
+		if A[1] > B[1] then
+			remove A[1]
+		else
+			remove B[1]
+	return max(A[1], B[1])
+		\end{lstlisting}
+	\end{enumerate}
+
+\end{enumerate}
+
+\end{document}
