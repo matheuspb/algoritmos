@@ -136,36 +136,36 @@
 		\Theta(g(n))$.
 
 		%%%% h) %%%%
-    \item $f(n) \in O(g(n))$:
-      \begin{align*}
-        0 &\le {n^{0.1}} \le c \log^{10} n \\
-        0 &\le \frac{\sqrt[10]{n}}{\log^{10} n} \le c
-      \end{align*}
-      A função da esquerda é decrescente, já que $g(n)$ cresce mais rapidamente
-      que a função no numerador.
+		\item $f(n) \in O(g(n))$:
+		\begin{align*}
+			0 &\le {n^{0.1}} \le c \log^{10} n \\
+			0 &\le \frac{\sqrt[10]{n}}{\log^{10} n} \le c
+		\end{align*}
+		A função da esquerda é decrescente, já que $g(n)$ cresce mais
+		rapidamente que a função no numerador.
 
-        $f(n) \notin O(g(n))$:
-      \begin{align*}
-        0 &\le c \log^{10} n \le {n^{0.1}}\\
-        0 &\le c \le \frac{\sqrt[10]{n}}{\log^{10} n}
-      \end{align*}
-          Como a função da direita é decrescente, não conseguimos encontrar um $c$ que
-      satisfaça a inequação para todo $n > n_0$. Logo $f(n) \notin
-      \Theta(g(n))$.
+		$f(n) \notin \Omega(g(n))$:
+		\begin{align*}
+			0 &\le c \log^{10} n \le {n^{0.1}}\\
+			0 &\le c \le \frac{\sqrt[10]{n}}{\log^{10} n}
+		\end{align*}
+		Como a função da direita é decrescente, não conseguimos encontrar um
+		$c$ que satisfaça a inequação para todo $n > n_0$. Logo $f(n) \notin
+		\Theta(g(n))$.
 
 		%%%% i) %%%%
 		\item $f(n) \in O(g(n))$:
 		\begin{align*}
-      0 &\le {\log ^{\log n} n} \le c \frac{n}{\log n} \\
-      0 &\le \frac{\log ^{\log n + 1} n}{n} \le c
+			0 &\le {\log ^{\log n} n} \le c \frac{n}{\log n} \\
+			0 &\le \frac{\log ^{\log n + 1} n}{n} \le c
 		\end{align*}
 		A função da esquerda é crescente para valores positivos, logo, é
 		possível encontrar uma constante $c$ que satisfaça a inequação.
 
 		$f(n) \in \Omega(g(n))$:
 		\begin{align*}
-      0 &\le  c \frac{n}{\log n} \le {\log ^{\log n} n} \\
-      0 &\le c \le \frac{\log ^{\log n + 1} n}{n}
+		0 &\le  c \frac{n}{\log n} \le {\log ^{\log n} n} \\
+		0 &\le c \le \frac{\log ^{\log n + 1} n}{n}
 		\end{align*}
 		Como a função da direita é crescente, podemos encontrar um $c$ que
 		satisfaça a inequação para todo $n > n_0$. Logo $f(n) \in
@@ -174,35 +174,34 @@
 		%%%% j) %%%%
 		\item $f(n) \in O(g(n))$:
 		\begin{align*}
-      0 &\le \sqrt{n} \le c {\log^3 n} \\
-      0 &\le \frac{\sqrt{n}}{{\log^3 n}} \le c
+			0 &\le \sqrt{n} \le c {\log^3 n} \\
+			0 &\le \frac{\sqrt{n}}{{\log^3 n}} \le c
 		\end{align*}
-    A função $f(n)$ cresce mais lentamente do que a função $g(n)$,
-    $\forall n \geq 4$
+		A função $f(n)$ cresce mais lentamente do que a função $g(n)$, $\forall
+		n \geq 4$
 
 		$f(n) \notin \Omega(g(n))$:
 		\begin{align*}
-      0 &\le c {\log^3 n} \le \sqrt{n} \\
-      0 &\le c \le \frac{\sqrt{n}}{\log^3 n}
+			0 &\le c {\log^3 n} \le \sqrt{n} \\
+			0 &\le c \le \frac{\sqrt{n}}{\log^3 n}
 		\end{align*}
-		Como a função da direita é decrescente, não é possível encontrar
-    um $c$ que satisfaça a inequação para todo $n > n_0$. Logo $f(n) \notin
+		Como a função da direita é decrescente, não é possível encontrar um $c$
+		que satisfaça a inequação para todo $n > n_0$. Logo $f(n) \notin
 		\Theta(g(n))$.
 
 		%%%% k) %%%%
 		\item $f(n) \in O(g(n))$:
 		\begin{align*}
-      0 &\le \sqrt{n} \le c {5^{\log n}} \\
-      0 &\le \frac{\sqrt{n}}{5^{\log n}} \le c
+			0 &\le \sqrt{n} \le c {5^{\log n}} \\
+			0 &\le \frac{\sqrt{n}}{5^{\log n}} \le c
 		\end{align*}
-    A função da esquerda é uma função decrescente, dado que $5^{\log n}$
-    cresce mais rapidamente do que $\sqrt{n}$.
-    $\forall n \geq 4$
+		A função da esquerda é uma função decrescente, dado que $5^{\log n}$
+		cresce mais rapidamente do que $\sqrt{n}$.  $\forall n \geq 4$
 
 		$f(n) \notin \Omega(g(n))$:
 		\begin{align*}
-      0 &\le c {5^{\log n}} \le \sqrt{n}\\
-      0 &\le c \le \frac{\sqrt{n}}{5^{\log n}}
+			0 &\le c {5^{\log n}} \le \sqrt{n}\\
+			0 &\le c \le \frac{\sqrt{n}}{5^{\log n}}
 		\end{align*}
 		Como o lado direito está sempre diminuindo, devido ao limite
 		apresentado acima, não podemos escolher uma constante $c$ que satisfaça
