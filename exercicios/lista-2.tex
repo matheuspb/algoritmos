@@ -172,10 +172,43 @@
 		\Theta(g(n))$.
 
 		%%%% j) %%%%
-		\item
+		\item $f(n) \in O(g(n))$:
+		\begin{align*}
+      0 &\le \sqrt{n} \le c {\log^3 n} \\
+      0 &\le \frac{\sqrt{n}}{{\log^3 n}} \le c
+		\end{align*}
+    A função $f(n)$ cresce mais lentamente do que a função $g(n)$,
+    $\forall n \geq 4$
+
+		$f(n) \notin \Omega(g(n))$:
+		\begin{align*}
+      0 &\le c {\log^3 n} \le \sqrt{n} \\
+      0 &\le c \le \frac{\sqrt{n}}{\log^3 n}
+		\end{align*}
+		Como a função da direita é decrescente, não é possível encontrar
+    um $c$ que satisfaça a inequação para todo $n > n_0$. Logo $f(n) \notin
+		\Theta(g(n))$.
 
 		%%%% k) %%%%
-		\item
+		\item $f(n) \in O(g(n))$:
+		\begin{align*}
+      0 &\le \sqrt{n} \le c {5^{\log n}} \\
+      0 &\le \frac{\sqrt{n}}{5^{\log n}} \le c
+		\end{align*}
+    A função da esquerda é uma função decrescente, dado que $5^{\log n}$
+    cresce mais rapidamente do que $\sqrt{n}$.
+    $\forall n \geq 4$
+
+		$f(n) \notin \Omega(g(n))$:
+		\begin{align*}
+      0 &\le c {5^{\log n}} \le \sqrt{n}\\
+      0 &\le c \le \frac{\sqrt{n}}{5^{\log n}}
+		\end{align*}
+		Como o lado direito está sempre diminuindo, devido ao limite
+		apresentado acima, não podemos escolher uma constante $c$ que satisfaça
+		a equação, já que sempre haverá um $n$ grande o suficiente que faça com
+		que o lado direito seja menor que o esquerdo. Logo, $f(n) \notin
+		\Theta(g(n))$
 
 		%%%% l) %%%%
 		\item $f(n) \in O(g(n))$:
