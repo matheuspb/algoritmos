@@ -136,10 +136,40 @@
 		\Theta(g(n))$.
 
 		%%%% h) %%%%
-		\item
+    \item $f(n) \in O(g(n))$:
+      \begin{align*}
+        0 &\le {n^{0.1}} \le c \log^{10} n \\
+        0 &\le \frac{\sqrt[10]{n}}{\log^{10} n} \le c
+      \end{align*}
+      A função da esquerda é decrescente, já que $g(n)$ cresce mais rapidamente
+      que a função no numerador.
+
+        $f(n) \notin O(g(n))$:
+      \begin{align*}
+        0 &\le c \log^{10} n \le {n^{0.1}}\\
+        0 &\le c \le \frac{\sqrt[10]{n}}{\log^{10} n}
+      \end{align*}
+          Como a função da direita é decrescente, não conseguimos encontrar um $c$ que
+      satisfaça a inequação para todo $n > n_0$. Logo $f(n) \notin
+      \Theta(g(n))$.
 
 		%%%% i) %%%%
-		\item
+		\item $f(n) \in O(g(n))$:
+		\begin{align*}
+      0 &\le {\log ^{\log n} n} \le c \frac{n}{\log n} \\
+      0 &\le \frac{\log ^{\log n + 1} n}{n} \le c
+		\end{align*}
+		A função da esquerda é crescente para valores positivos, logo, é
+		possível encontrar uma constante $c$ que satisfaça a inequação.
+
+		$f(n) \in \Omega(g(n))$:
+		\begin{align*}
+      0 &\le  c \frac{n}{\log n} \le {\log ^{\log n} n} \\
+      0 &\le c \le \frac{\log ^{\log n + 1} n}{n}
+		\end{align*}
+		Como a função da direita é crescente, podemos encontrar um $c$ que
+		satisfaça a inequação para todo $n > n_0$. Logo $f(n) \in
+		\Theta(g(n))$.
 
 		%%%% j) %%%%
 		\item
