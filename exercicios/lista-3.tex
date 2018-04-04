@@ -13,7 +13,7 @@
 \maketitle
 
 \begin{enumerate}
-	%%%% exercicio 1 %%%%
+	%%%% exercício 1 %%%%
 	\item \begin{enumerate}
 
 		%%% item a) %%%
@@ -84,6 +84,38 @@
 		\end{align*}
 
 	\end{enumerate}
+
+	%%%% exercício 2 %%%%
+	\item \begin{enumerate}
+	\end{enumerate}
+
+	%%%% exercício 3 %%%%
+	\item \begin{enumerate}
+
+		\item Caso 1: $f(n) = 1 = O(n^{log_4 2})$, logo $T(n) =
+		\Theta(\sqrt{n})$.
+
+		\item Caso 2: $f(n) = \sqrt{n} = \Theta(n^{log_4 2})$, logo $T(n) =
+		\Theta(\sqrt{n}\lg n)$.
+
+		\item Caso 3: $f(n) = n = \Omega(n^{log_4 2})$ e $2\frac{n}{4} \leq c
+		\cdot n$ para $c=1$, logo $T(n) = \Theta(n)$.
+
+		\item Caso 3: $f(n) = n^2 = \Omega(n^{log_4 2})$ e $2\frac{n^2}{16}
+		\leq c \cdot n^2$ para $c=1$, logo $T(n) = \Theta(n)$.
+
+	\end{enumerate}
+
+	%%%% exercício 4 %%%%
+	\item Essa recorrência se encaixa no caso 2 do teorema mestre, $f(n) =
+	\Theta(1) = \Theta(n^{\log_2 1 = 0})$, logo, $T(n) = \Theta(n^{\log_2 1}
+	\lg n) = \Theta(\lg n)$.
+
+	%%%% exercício 5 %%%%
+	\item Não pode ser aplicado o teorema mestre aqui, pois, $n^{\log_2 4} =
+	n^2$ não é polinomialmente diferente de $n^2 \lg n$, supondo que essa
+	recorrência caia no caso 3 do teorema, $n^{2+\epsilon}$ é assintoticamente
+	maior que $n^2 \lg n$ para qualquer $\epsilon > 0$.
 
 \end{enumerate}
 
