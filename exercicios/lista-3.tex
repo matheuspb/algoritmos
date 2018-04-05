@@ -2,6 +2,7 @@
 \usepackage[a4paper, margin=3cm]{geometry}
 \usepackage[brazilian]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage{qtree}
 \usepackage{amsmath, amssymb, amsthm, listings}
 
 \title{Projeto e Análise de Algoritmos -- Lista de Exercícios 3}
@@ -86,8 +87,51 @@
 	\end{enumerate}
 
 	%%%% exercício 2 %%%%
-	\item \begin{enumerate}
-	\end{enumerate}
+  \item \begin{enumerate}
+      \item
+      \begin{LARGE}
+         \Tree[.n [.$\frac{n}{2}$ [.$\frac{n}{4}$ ]
+                                  [.$\frac{n}{4}$ ]
+                                  [.$\frac{n}{4}$ ] ]
+                  [.$\frac{n}{2}$ [.$\frac{n}{4}$ ]
+                                  [.$\frac{n}{4}$ ]
+                                  [.$\frac{n}{4}$ ] ]
+                  [.$\frac{n}{2}$ [.$\frac{n}{4}$ ]
+                                  [.$\frac{n}{4}$ ]
+                                  [.$\frac{n}{4}$ ] ]
+                 ]
+      \end{LARGE}
+
+      Analisando a árvore, no primeiro nível temos uma complexidade $n$,
+      no segundo nível, complexidade $\frac{3n}{2}$, ou seja, $O(n)$.
+      No terceiro, $\frac{9n}{4}$. Consequentemente, o problema inicial
+      é $O(n)$.
+
+      \item
+      \begin{LARGE}
+        \Tree[.$n^2$ [.$\frac{n^2}{2}$ [.$\frac{n^2}{4}$ [.$\frac{n^2}{8}$ ] ] ] ]
+      \end{LARGE}
+
+      Analisando a árvore, no primeiro nível temos uma complexidade $n^2$,
+      no segundo nível, complexidade $\frac{n^2}{2}$, no terceiro,
+      $\frac{n^2}{4}$, e assim vai. Consequentemente, a árvore desce em
+      proporção logarítmica ($\frac{1}{2}, \frac{1}{4}, \frac{1}{8}, ... $)
+      e o problema inicial é $O(n^2)$.
+
+      \item
+      \begin{LARGE}
+         \Tree[.n [.$n-1$ [.$n-2$ ]
+                            [.$\frac{n-1}{2}$ ] ]
+                  [.$\frac{n}{2}$ [.$\frac{n-2}{2}$ ]
+                                  [.$\frac{n}{4}$ ] ]
+                 ]
+      \end{LARGE}
+
+      Analisando a árvore, no primeiro nível temos uma complexidade $n$,
+      no segundo nível, complexidade $\frac{3n-2}{2}$, ou seja, $O(n)$.
+      No terceiro, $\frac{9n-14}{4}$. Consequentemente, o problema inicial
+      é $O(n)$.
+  \end{enumerate}
 
 	%%%% exercício 3 %%%%
 	\item \begin{enumerate}
@@ -120,3 +164,4 @@
 \end{enumerate}
 
 \end{document}
+
