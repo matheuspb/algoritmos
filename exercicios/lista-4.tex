@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage[a4paper, margin=3cm]{geometry}
+\usepackage[brazilian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, amsthm, listings}
+
+\title{Projeto e Análise de Algoritmos -- Lista de Exercícios 4}
+\author{Lucas Bordignon \and Matheus Bittencourt \and Vinicius Macelai}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+	%%%% exercício 1 %%%%
+	\item \lstinputlisting[language=Python, frame=single, tabsize=4]
+		{../algoritmos/lista-4/remove_duplicates.py}
+
+	%%%% exercício 2 %%%%
+	\item \lstinputlisting[language=Python, frame=single, tabsize=4]
+		{../algoritmos/lista-4/check_ii.py}
+
+	%%%% exercício 3 %%%%
+	\item \begin{enumerate}
+
+		%%% item a) %%%
+		\item A primeira operação vai tomar $2n$ comparações, a segunda $3n$ e
+		assim suscetivamente, logo:
+
+		\begin{align*}
+		T(n) &= \sum_{i=2}^{k}i\cdot n \\
+		&= n\left(\frac{k^2 + k - 2}{2}\right) \\
+		&= \Theta(nk^2)
+		\end{align*}
+
+		%%% item b) %%%
+		\item Assumindo que $k$ seja uma potência de 2, podemos fazer o
+		\textit{merge} dos pares de vetores obtendo agora $k/2$ vetores de
+		tamanho $2n$ e repetir isso até que tenhamos apenas 1 vetor de tamanho
+		$kn$. Em cada passo desse algoritmo iremos executar $kn$ comparações e
+		iremos executar esse passo $\log k$ vezes, logo:
+
+		$$ T(n) = \Theta(kn \log k) $$
+
+	\end{enumerate}
+
+	%%%% exercício 4 %%%%
+	\item
+
+\end{enumerate}
+
+\end{document}
+
