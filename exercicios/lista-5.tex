@@ -12,9 +12,66 @@
 
 \maketitle
 
+\section*{Parte 1}
+
 \begin{enumerate}
+
 	%%%% exercício 1 %%%%
+	\item O algoritmo de busca dado por Dijkstra é considerado ótimo pois seus
+	sub-problemas também são. Quando o algoritmo fecha um nodo, há a garantia
+	de que o menor caminho entre o nodo inicial e o nodo atual foi encontrado.
+	Assim sendo, o mesmo se reduz a resolver subproblemas que são do mesmo
+	padrão do que a solução inicial. O algoritmo permanece sempre a frente pois
+	até que o nodo destino seja fechado, o algoritmo continua considerando
+	todos os caminhos ótimos.
+
+	%%%% exercício 2 %%%%
+	\item É uma estratégia gulosa pois o algoritmo escolhe de forma ``cega'' os
+	intervalos e os adiciona no conjunto da solução.  Se o algoritmo retorna
+	uma solução $A = [i_1, \ldots, i_k]$ que é possivelmente ótima, assumindo
+	que existe outra solução ótima $O = [j_1, \ldots, j_m]$, podemos demonstrar
+	que as soluções parciais de $A$ são melhores ou iguais que as de $O$. Prova
+	por indução: como o algoritmo sempre escolhe o intervalo que começa mais
+	tarde, então $s(i_k) \ge s(j_m)$ (passo base). E também podemos afirmar
+	$s(i_r) \ge s(j_r)$ para qualquer $r$, senão, de acordo com o algoritmo
+	teríamos escolhido $j_r$ ao invés de $i_r$ já que sempre escolhemos o
+	intervalo que inicia mais tarde. Portanto, $s(i_r) \ge f(j_{r-1})$ e o
+	algoritmo tem a opção de escolher $j_{r-1}$.
+
+	%%%% exercício 3 %%%%
 	\item
+
+	%%%% exercício 4 %%%%
+	\item
+
+	%%%% exercício 5 %%%%
+	\item
+
+\end{enumerate}
+
+\section*{Parte 2}
+
+\begin{enumerate}
+
+	%%%% exercício 1 %%%%
+	\item É possível achar soluções para o problema, porém não há nenhuma
+	garantia que se obtenha soluções ótimas, apenas aproximações. Os algoritmos
+	que encontram soluções aproximadas são comparados usando uma razão entre o
+	número de vértices retornados por ele e o número de vértices da solução
+	ótima para um grafo $G$. Ainda não existem algoritmos que consigam que essa
+	razão (em média) seja asintoticamente menor que 2.
+
+	%%%% exercício 2 %%%%
+	\item Baseando-se no algoritmo de Kruskal, dado um grafo conexo $G$, basta
+	ordenar todas as arestas de $G$ em ordem decrescente de peso numa lista
+	$L$. Construir um novo grafo $G'$ com os mesmos vértices de $G$, e depois,
+	retirando em ordem as arestas de $L$ e adicionando-as em $G'$ se somente se
+	a adição desta aresta não implique em criar um ciclo em $G'$.
+
+	%%%% exercício 3 %%%%
+	\item Basta atender os usuários na ordem crescente de tempo requerido, de
+	forma que o usuário que requer menos tempo é atendido primeiro e o usuário
+	que requer mais tempo é o último.
 
 \end{enumerate}
 
